@@ -20,6 +20,7 @@ function Contacts() {
           chats?.length > 0 ? chats?.map((e) => {
             return (
               <div onClick={() => {
+                console.log(e);
                 dispatch(setActiveChat(e))
               }} key={e._id} className={`flex items-center justify-between sm:gap-x-1 md:gap-x-1 mt-5 ${activeChat._id === e._id ? "bg-transparent backdrop-blur-3xl border border-white rounded-lg m-2" : "bg-transparent"} cursor-pointer  py-4 px-2`}>
                 <div className='flex items-center gap-x-3 sm:gap-x-1 md:gap-x-3'>
