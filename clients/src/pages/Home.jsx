@@ -105,6 +105,7 @@ function Home() {
                         notifications.map((e, index) => {
                           return (
                             <div onClick={() => {
+                              console.log(e.chatId);
                               dispatch(setActiveChat(e.chatId))
                               dispatch(setNotifications(notifications.filter((data) => data !== e)))
                               
