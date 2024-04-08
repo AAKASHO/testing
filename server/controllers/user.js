@@ -103,6 +103,11 @@ export const searchUsers = async (req, res) => {
         $or: [
           { name: { $regex: req.query.search, $options: 'i' } },
           { email: { $regex: req.query.search, $options: 'i' } },
+
+
+
+
+          
         ],
       }
     : {};

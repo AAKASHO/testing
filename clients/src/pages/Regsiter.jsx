@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { GoogleLogin } from 'react-google-login';
+// import { GoogleLogin } from 'react-google-login';
 import { gapi } from 'gapi-script';
 import { useEffect } from 'react';
-import { googleAuth, registerUser } from '../apis/auth.js';
+import { registerUser } from '../apis/auth.js';
 import { useState } from 'react';
 import { BsEmojiLaughing, BsEmojiExpressionless } from 'react-icons/bs';
 import { toast } from 'react-toastify';
@@ -44,20 +44,20 @@ function Regsiter() {
     }
   };
 
-  const googleSuccess = async (res) => {
-    if (res?.profileObj) {
-      setIsLoading(true);
-      const response = await googleAuth({ tokenId: res.tokenId });
-      setIsLoading(false);
-      if (response.data.token) {
-        localStorage.setItem('userToken', response.data.token);
-        pageRoute('/chats');
-      }
-    }
-  };
-  const googleFailure = (error) => {
-    toast.error('Something Went Wrong.Try Agian!');
-  };
+  // const googleSuccess = async (res) => {
+  //   if (res?.profileObj) {
+  //     setIsLoading(true);
+  //     const response = await googleAuth({ tokenId: res.tokenId });
+  //     setIsLoading(false);
+  //     if (response.data.token) {
+  //       localStorage.setItem('userToken', response.data.token);
+  //       pageRoute('/chats');
+  //     }
+  //   }
+  // };
+  // const googleFailure = (error) => {
+  //   toast.error('Something Went Wrong.Try Agian!');
+  // };
 
   useEffect(() => {
     const initClient = () => {
